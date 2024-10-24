@@ -9,22 +9,21 @@ public class Ejercicio1 {
         int insercion = sn.nextInt();
         int segundos = 0;
         int segundosTotales =0;
-        int minutos;
+        int minutos=0;
         int horas =0;
-        for (minutos = 0; segundosTotales < insercion; minutos++) {
+        while (segundosTotales < insercion) {
+            for (int i=1; i <= insercion && i<= 60; i++) {
+                if (segundos == 60) {
+                    segundos = 0;
+                    minutos++;
+                }
+                segundos++;
+                segundosTotales ++;
+            }
             if (minutos == 60) {
                 horas ++;
                 minutos = 0;
             }
-            for (int i=1; i <= insercion && i<= 60; i++) {
-                if (i == 60) {
-                    segundos = 0;
-                } else {
-                    segundosTotales ++;
-                    segundos ++;
-                }
-            }
-
         }
         System.out.println("Horas = " + horas);
         System.out.println("Minutos = " + minutos);
